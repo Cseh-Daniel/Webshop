@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Tintapatronok</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -32,17 +32,6 @@
 
             .position-ref {
                 position: relative;
-            }
-
-            .top-left {
-                position: absolute;
-                left: 18%;
-                top: 18px;
-            }
-
-            .cim{
-              font-size: 20pt;
-              font-weight: bold;
             }
 
             .top-right {
@@ -76,9 +65,6 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-        <div class="top-left cim" >
-          Tintapatronok
-        </div>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -95,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Tintapatronok
+                    Laravel
                 </div>
 
                 <div class="links">
