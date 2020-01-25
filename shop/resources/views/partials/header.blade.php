@@ -8,10 +8,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
 
       <form class="form-inline ml-5 my-lg-0">
-        <input class="form-control mr-1" type="search" placeholder="Mit keres?" aria-label="Search">
+        <input class="form-control mr-1" type="search" placeholder="Mit keres?" aria-label="Search" style="width: 70%" >
         <button class="btn btn-outline-info mr-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
       </form>
 
