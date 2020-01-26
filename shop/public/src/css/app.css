@@ -1,3 +1,5 @@
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+
 .db{
 display:inline;
 width: 22%;
@@ -21,3 +23,11 @@ padding: 5px;
 max-width: 5%;
 
 }
+
+.thr{
+  display: block; height: 1px;
+      border: 0; border-top: 1px solid #aaa;
+      margin: 1em 0; padding: 0;
+}
+
+.
