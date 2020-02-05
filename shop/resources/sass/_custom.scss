@@ -1,0 +1,46 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+//  height: 2.5rem;            /* Footer height */
+}
+footer .copyright {
+  color: #aaa;
+  padding: 15px 0;
+  background: #000;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+footer .copyright span {
+  color: #0894d1;
+}
+
+.db{
+display:inline;
+max-width: 27%;
+clear: both;
+align:left;
+}
+
+.termekek{
+
+  width: 50%;
+
+}
+
+.keret{
+  border: solid black 1px;
+}
+
+.icon{
+
+max-width: 6%;
+
+}
+
+.thr{
+  display: block; height: 1px;
+      border: 0; border-top: 1px solid #aaa;
+      margin: 1em 0; padding: 0;
+}

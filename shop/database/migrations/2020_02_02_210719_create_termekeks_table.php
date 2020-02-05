@@ -16,6 +16,9 @@ class CreateTermekeksTable extends Migration
         Schema::create('termekeks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->String("nev")
+            $table->Integer("db")
+            $table->Integer("ar");
         });
     }
 
