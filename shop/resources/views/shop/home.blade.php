@@ -24,5 +24,4 @@ Tintapatronok
 <hr class="thr">
 </div>
 
-
 @endsection

@@ -1,11 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);@charset "UTF-8";
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 footer .copyright {
   color: #aaa;
   padding: 15px 0;
@@ -20,7 +14,7 @@ footer .copyright span {
 
 .db {
   display: inline;
-  max-width: 27%;
+  max-width: 30%;
   clear: both;
   align: left;
 }
