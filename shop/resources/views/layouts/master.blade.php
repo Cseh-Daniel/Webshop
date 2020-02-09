@@ -10,6 +10,9 @@
   </head>
   <body>
 @include("partials/header")
+@if(Request::is("/"))
+@include("partials.showcase")
+@endif
 <div class="container">
 @yield("content")
 </div>
