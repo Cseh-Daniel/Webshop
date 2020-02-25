@@ -28,7 +28,7 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="#">Bejelentkezés</a>
-        <a class="dropdown-item" href="#">Regisztráció</a>
+        <a class="dropdown-item" href="/signup">Regisztráció</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Kijelentkezés</a>
       </div>

@@ -12,3 +12,6 @@
 */
 
 Route::get('/',"termekController@getIndex");
+
+Route::get('/signup',"UserController@create");
+Route::post('signup',"UserController@store");

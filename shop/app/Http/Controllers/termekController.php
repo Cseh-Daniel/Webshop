@@ -11,4 +11,11 @@ class termekController extends Controller
     $termekek=termekek::all();
     return view("home",["termekek" => $termekek]);
   }
+
+  public function getSignup(){
+
+    return view("user.signup");
+
+  }
+
 }
