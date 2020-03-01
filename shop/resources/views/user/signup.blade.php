@@ -20,6 +20,8 @@
       <input class="form-control" type="text" name="email" value="">
       <label class="mb-0 mt-3" for="password">Jelszó:</label>
       <input class="form-control" type="password" name="password" value="">
+      <label class="mb-0 mt-3" for="password_confirmation">Jelszó újra:</label>
+      <input class="form-control" type="password" name="password_confirmation" value="">
       <button class="btn btn-primary mt-3" type="submit" name="send">Regisztrálás</button>
       {{csrf_field()}}
     </form>
