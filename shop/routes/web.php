@@ -13,8 +13,8 @@
 
 Route::get('/',"termekController@getIndex");
 
-Route::get('/signup',"UserController@create");
-Route::post('signup',"UserController@store");
+Route::get('/signup',"RegController@create");
+Route::post('signup',"RegController@store");
 
 Route::get('/signin',"UserController@create");
 Route::post('signin',"UserController@store");
