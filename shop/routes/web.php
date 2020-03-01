@@ -21,3 +21,6 @@ Route::post('login',"UserController@store");
 
 Route::get('/profil',"UserController@showProfile");
 Route::get('/logout',"UserController@destroy");
+
+Route::post("/feltolt/submit","termekController@submit");
+Route::get("/feltoltes","PagesController@getFeltolt");

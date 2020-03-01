@@ -25,4 +25,10 @@ $termekek=termekek::all();
 
   }
 
+  public function getFeltolt(){
+
+    return view("feltolt");
+
+  }
+
 }
