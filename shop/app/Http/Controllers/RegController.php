@@ -6,12 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
-class UserController extends Controller
+class RegController extends Controller
 {
-  public function create(){
-
-    return view("user.signup");
-  }
   /*public function store(Request $request){
 
     $this->validate($request,[

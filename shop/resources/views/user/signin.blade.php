@@ -13,7 +13,7 @@
 @endforeach
     </div>
     @endif
-    <form class="form-group" action="signin" method="post">
+    <form class="form-group" action="login" method="post">
       <label class="mb-0 mt-3" for="email">E-mail:</label>
       <input class="form-control" type="text" name="email" value="">
       <label class="mb-0 mt-3" for="password">Jelszó:</label>

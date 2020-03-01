@@ -11,7 +11,9 @@ Tintapatronok
 <div class="row">
 <image class="icon" src="{{URL::to("src/svg/ink-cartridge.svg")}}"></image>
   <div class="col col-lg mt-2 px-1" name="tnev">
-  <h6>{{$termek->nev}}</h6>
+
+<h6>{{$termek->nev}}</h6>
+
 </div>
 
 <div class="col col-sm-2 px-4 mt-2" name="ar"><h6>{{$termek->ar}} Ft</h6></div>

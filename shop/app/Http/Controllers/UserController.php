@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
-  public function create(){
-
-    return view("user.signup");
-  }
   /*public function store(Request $request){
 
     $this->validate($request,[
@@ -30,25 +27,31 @@ class UserController extends Controller
     return redirect()->route("home");
   }*/
 
-  public function store(){
+  public function store(Request $request){
 
-        if(!$this->validate(request(),[
-        "name"=>"required",
-        "email"=>"required|email|unique:users,email",
-        "password"=>"required|confirmed|min:6"
-      ])){
-//állapotmegtartás
-$data=request()->all();
-return view("user.signup")->with("data",$data);
+      $this->validate(request(),[
+        "email"=>"required|email",
+        "password"=>"required"
+      ]);
 
-      }
-
-      $user= User::create(request(["name","email","password"]));
-      auth()->login($user);
-      //\Mail::to($user->email)->send(new hello($user));
-      return redirect("/")->with("ok","Sikeres regisztráció");
-
-
+    if(Auth::attempt(["email"=> $request->input("email"), "password" => $request->input("password")])){
+        return redirect("/")->with("ok","Sikeres bejelentkezés!");
+    }
+    return redirect()->back();
 
     }
+
+    public function showProfile(){
+
+      return view("user.profile");
+
+    }
+
+    public function destroy(){
+
+      auth()->logout();
+      return redirect()->to("/");
+
+    }
+
 }
