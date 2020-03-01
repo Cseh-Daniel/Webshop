@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/',"termekController@getIndex");
+Route::get('/',"PagesController@getIndex");
 
-Route::get('/signup',"termekController@getSignup");
+Route::get('/signup',"PagesController@getSignup");
 Route::post('signup',"RegController@store");
 
-Route::get('/login',"termekController@getSignin");
+Route::get('/login',"PagesController@getSignin");
 Route::post('login',"UserController@store");
 
 Route::get('/profil',"UserController@showProfile");
