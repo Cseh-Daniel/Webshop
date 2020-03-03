@@ -13,14 +13,17 @@
 
 Route::get('/',"PagesController@getIndex");
 
-Route::get('/signup',"PagesController@getSignup");
+Route::middleware("guest")->group(function(){
+  Route::get('/signup',"PagesController@getSignup");
+  Route::get('/login',"PagesController@getSignin")->name("login");
+});
+
+Route::middleware("auth")->group(function(){
+  Route::get('/profil',"UserController@showProfile");
+  Route::get('/logout',"UserController@destroy");
+  Route::get("/feltoltes","PagesController@getFeltolt");
+});
+
 Route::post('signup',"RegController@store");
-
-Route::get('/login',"PagesController@getSignin");
 Route::post('login',"UserController@store");
-
-Route::get('/profil',"UserController@showProfile");
-Route::get('/logout',"UserController@destroy");
-
 Route::post("/feltolt/submit","termekController@submit");
-Route::get("/feltoltes","PagesController@getFeltolt");
