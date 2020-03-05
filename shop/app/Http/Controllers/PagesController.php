@@ -26,9 +26,11 @@ $termekek=termekek::all();
   }
 
   public function getFeltolt(){
-
-    return view("feltolt");
-
+    return view("admin.feltolt");
   }
+
+  /*public function getAlogin(){
+    return view("admin.login");
+  }*/
 
 }

@@ -16,14 +16,17 @@ Route::middleware("guest")->group(function(){
   Route::get('/',"PagesController@getIndex");
   Route::get('/signup',"PagesController@getSignup");
   Route::get('/login',"PagesController@getSignin")->name("login");
-});
+  Route::post('signup',"RegController@store");
+  Route::post('login',"UserController@store");
+  });
 
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");
-  Route::get("/feltoltes","PagesController@getFeltolt");
   Route::post("/feltolt/submit","termekController@submit");
 });
 
-Route::post('signup',"RegController@store");
-Route::post('login',"UserController@store");
+Route::middleware("auth")->prefix("admin")->group(function(){
+  Route::get("/feltoltes","PagesController@getFeltolt");
+  Route::get("/login","PagesController@getAlogin");
+});
