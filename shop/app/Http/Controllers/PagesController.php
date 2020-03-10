@@ -9,7 +9,6 @@ class PagesController extends Controller
 {
   public function getIndex(){
 $termekek=termekek::all();
-
     return view("home",["termekek" => $termekek]);
   }
 

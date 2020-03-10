@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\termekek;
+use App\kosar;
+use Session;
 
 class termekController extends Controller
 {
@@ -24,6 +26,18 @@ $termekek->ar=$request->input("ar");
 
 $termekek->save();
 return redirect("/")->with("siker","A terméket sikeresen feltöltötte!");
+}
+
+public function kosarhozad(Request $request, $id){
+
+  $termekek=termekek::find($id);
+  $regikosar=Session::has("kosar") ? Session::get("kosar") : null;
+  $kosar=new kosar($regikosar);
+  $kosar->add($termekek,$termekek->id);
+
+  $request->session()->put("kosar",$kosar);
+  //dd($request->session()->get("kosar"));
+  return redirect()->route("home");
 }
 
 }

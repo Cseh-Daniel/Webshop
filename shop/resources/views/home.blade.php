@@ -16,12 +16,13 @@ Tintapatronok
 
 </div>
 
-<div class="col col-sm-2 px-4 mt-2" name="ar"><h6>{{$termek->ar}} Ft</h6></div>
+<div class="col col-sm-2 px-1 mt-2" name="ar"><h6>{{$termek->ar}} Ft</h6></div>
 
 <div class="col col-md">
-  <input class="form-control db float-right" type="number" name="db" placeholder="db" min="0">
+  <input class="form-control db float-right" type="text" name="db" placeholder="db" min="0">
+  <a href="{{route('kosarhozad',['id'=>$termek->id])}}">
   <button class="btn btn-info mb-1 mr-1 float-right" type="button" name="button"> <i class="fa fa-shopping-cart"></i></button>
-
+</a>
 </div>
 
 </div>

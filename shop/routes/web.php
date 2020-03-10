@@ -13,12 +13,14 @@
 
 
 Route::middleware("guest")->group(function(){
-  Route::get('/',"PagesController@getIndex");
   Route::get('/signup',"PagesController@getSignup");
   Route::get('/login',"PagesController@getSignin")->name("login");
   Route::post('signup',"RegController@store");
   Route::post('login',"UserController@store");
   });
+
+  Route::get('/',"PagesController@getIndex")->name("home");
+  Route::get("/kosarhozad/{id}","termekController@kosarhozad")->name("kosarhozad");
 
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
