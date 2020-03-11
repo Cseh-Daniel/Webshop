@@ -17,7 +17,9 @@
 
 <li class="nav-item">
 
-  <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>  Kosár</a>
+  <a class="nav-link ml-3" href="#"><i class="fa fa-shopping-cart"></i>Kosár
+    <span class="badge">{{Session::has("kosar")?Session::get("kosar")->teljesdb : ""}}</span>
+  </a>
 </li>
 
 @if(auth()->check())
@@ -26,7 +28,7 @@
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-user" ></i> {{auth()->user()->name}} </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-         
+
         <a class="dropdown-item" href="/profil">Profil</a>
         <a class="dropdown-item" href="/orders">Rendelések</a>
 

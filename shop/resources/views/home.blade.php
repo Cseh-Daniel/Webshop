@@ -12,11 +12,11 @@ Tintapatronok
 <image class="icon" src="{{URL::to("src/svg/ink-cartridge.svg")}}"></image>
   <div class="col col-lg mt-2 px-1" name="tnev">
 
-<h6>{{$termek->nev}}</h6>
+<h4>{{$termek->nev}}</h4>
 
 </div>
 
-<div class="col col-sm-2 px-1 mt-2" name="ar"><h6>{{$termek->ar}} Ft</h6></div>
+<div class="col col-sm-2 px-1 mt-2" name="ar"><h6 class="mt-2">{{$termek->ar}} Ft</h6></div>
 
 <div class="col col-md">
   <input class="form-control db float-right" type="text" name="db" placeholder="db" min="0">
@@ -29,4 +29,5 @@ Tintapatronok
 <hr class="thr">
 </div>
 @endforeach
+
 @endsection

@@ -40,4 +40,13 @@ public function kosarhozad(Request $request, $id){
   return redirect()->route("home");
 }
 
+public function kosarTartalom(){
+  if(!Session::has("kosar")){
+    return view("shop.kosar");
+  }
+  $regikosar=Session::get("kosar");
+  $kosar=new kosar($regikosar);
+  return view("shop.kosar",["termekek"=> $kosar->aruk,"teljesar"=>$kosar->teljesar]);
+}
+
 }

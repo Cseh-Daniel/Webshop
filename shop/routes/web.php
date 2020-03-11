@@ -21,7 +21,7 @@ Route::middleware("guest")->group(function(){
 
   Route::get('/',"PagesController@getIndex")->name("home");
   Route::get("/kosarhozad/{id}","termekController@kosarhozad")->name("kosarhozad");
-
+  Route::get("/kosar","termekController@kosarTartalom");
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");

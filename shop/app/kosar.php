@@ -12,8 +12,8 @@ class kosar
 public function __construct($regikosar){
   if ($regikosar) {
     $this->aruk=$regikosar->aruk;
-    $this->$teljesdb=$regikosar->$teljesdb;
-    $this->$teljesar=$regikosar->$teljesar;
+    $this->teljesdb=$regikosar->teljesdb;
+    $this->teljesar=$regikosar->teljesar;
   }
 }
 
