@@ -28,8 +28,13 @@ $termekek->save();
 return redirect("/")->with("siker","A terméket sikeresen feltöltötte!");
 }
 
-public function kosarhozad(Request $request, $id){
+public function kosarhozad(Request $request){
+  dd($request,$request["id"],$request["db"]);
 
+  //dd($db);
+
+
+/*
   $termekek=termekek::find($id);
   $regikosar=Session::has("kosar") ? Session::get("kosar") : null;
   $kosar=new kosar($regikosar);
@@ -38,6 +43,8 @@ public function kosarhozad(Request $request, $id){
   $request->session()->put("kosar",$kosar);
   //dd($request->session()->get("kosar"));
   return redirect()->route("home");
+*/
+
 }
 
 public function kosarTartalom(){

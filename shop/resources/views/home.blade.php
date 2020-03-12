@@ -19,10 +19,13 @@ Tintapatronok
 <div class="col col-sm-2 px-1 mt-2" name="ar"><h6 class="mt-2">{{$termek->ar}} Ft</h6></div>
 
 <div class="col col-md">
-  <input class="form-control db float-right" type="text" name="db" placeholder="db" min="0">
-  <a href="{{route('kosarhozad',['id'=>$termek->id])}}">
-  <button class="btn btn-info mb-1 mr-1 float-right" type="button" name="button"> <i class="fa fa-shopping-cart"></i></button>
-</a>
+  {{ Form::open(['route' => ['kosarhozad',""],  'method' => 'POST']) }}
+  {{csrf_field()}}
+  <input class="form-control db float-right" type="text" id="db" name="db" placeholder="db" min="0" max="{{$termek->db}}" required>
+  <input hidden type="text" id="id" name="id" placeholder="id" value="{{$termek->id}}">
+  <button class="btn btn-info mb-1 mr-1 float-right" type="submit" name="button"> <i class="fa fa-shopping-cart"></i></button>
+
+{{ Form::close()}}
 </div>
 
 </div>
