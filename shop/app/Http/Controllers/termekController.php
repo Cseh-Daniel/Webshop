@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\termekek;
 use App\kosar;
+use Auth;
 use Session;
 
 class termekController extends Controller
@@ -29,7 +30,12 @@ return redirect("/")->with("siker","A terméket sikeresen feltöltötte!");
 }
 
 public function kosarhozad(Request $request){
-  dd($request,$request["id"],$request["db"]);
+
+
+
+  $uid = Auth::user()->id;
+
+  dd($request,$request["id"],$request["db"],$user);
 
   //dd($db);
 

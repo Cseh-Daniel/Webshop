@@ -18,7 +18,9 @@
 <li class="nav-item">
 
   <a class="nav-link ml-3" href="#"><i class="fa fa-shopping-cart"></i>Kosár
-    <span class="badge">{{Session::has("kosar")?Session::get("kosar")->teljesdb : ""}}</span>
+    <span class="badge">
+alma
+      <!--Session::has("kosar")?Session::get("kosar")->teljesdb : ""--></span>
   </a>
 </li>
 
