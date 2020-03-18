@@ -135,7 +135,7 @@ return [
     */
 
     'providers' => [
-
+      Darryldecode\Cart\CartServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */

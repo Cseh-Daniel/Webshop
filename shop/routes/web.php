@@ -22,7 +22,8 @@ Route::middleware("guest")->group(function(){
   Route::get('/',"PagesController@getIndex")->name("home");
   //Route::get("/kosarhozad/{id}","termekController@kosarhozad")->name("kosarhozad");
   Route::post("/kosarhozad","termekController@kosarhozad")->name("kosarhozad");
-  Route::get("/kosar","termekController@kosarTartalom");
+  Route::get("/kosar","termekController@kosarTartalom")->name("kosar");
+  Route::post("/kosarupdate","termekController@kosarUpdate")->name("kosarupdate");
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");
