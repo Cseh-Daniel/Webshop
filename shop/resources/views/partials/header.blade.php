@@ -19,8 +19,12 @@
 
   <a class="nav-link ml-3" href="/kosar"><i class="fa fa-shopping-cart"></i>Kosár
     <span class="badge">
-alma
-      <!--Session::has("kosar")?Session::get("kosar")->teljesdb : ""--></span>
+      @if(auth()->check())
+      {{\Cart::session(auth()->user()->id)->getTotalQuantity()}}
+      @else
+      {{\Cart::session(session()->getId())->getTotalQuantity()}}
+      @endif
+    </span>
   </a>
 </li>
 
