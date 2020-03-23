@@ -31,5 +31,9 @@ Tintapatronok
 </div>
   {{Form::close()}}
   @endforeach
+  <div class="text-center">
+<a href="/rendel" class="text-center"><button type="button" class="btn btn-success"><h4>Rendelés</h4></button></a>
+</div>
 @endif
+
 @endsection
