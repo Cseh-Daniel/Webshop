@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\termekek;
-use App\kosar;
-use Auth;
+//use App\kosar;
 use Session;
+use Auth;
 
 class termekController extends Controller
 {

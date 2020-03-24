@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+use Session;
+
 use App\User;
 use Auth;
 
@@ -35,9 +38,11 @@ class UserController extends Controller
       ]);
 
     if(Auth::attempt(["email"=> $request->input("email"), "password" => $request->input("password")])){
-        return redirect("/")->with("ok","Sikeres bejelentkezés!");
+
+        return redirect()->back();
+        //return redirect("/")->with("ok","Sikeres bejelentkezés!");
     }
-    return redirect()->back();
+
 
     }
 
