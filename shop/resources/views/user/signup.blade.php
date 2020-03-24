@@ -4,15 +4,7 @@
 
   <div class="mx-auto">
     <h1>Regisztráció</h1>
-    @if(count($errors)>0)
-    <div class="alert alert-danger">
-@foreach($errors->all() as $error)
 
-<p>{{$error}}</p>
-
-@endforeach
-    </div>
-    @endif
     <form class="form-group" action="signup" method="post">
       <label class="mb-0 mt-3" for="name">Név:</label>
       <input class="form-control" type="text" name="name" value="">
