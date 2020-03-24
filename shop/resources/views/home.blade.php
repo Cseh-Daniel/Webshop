@@ -4,6 +4,15 @@ Tintapatronok
 @endsection
 @section("content")
 
+@if(session("siker"))
+
+
+  <div class="alert alert-success col-md-4 mx-auto text-center">
+    {{session('siker')}}
+  </div>
+
+@endif
+
 @foreach($termekek as $termek)
 
 <div class="termekek mt-0 mx-auto">

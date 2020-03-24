@@ -1,17 +1,22 @@
 @if(count($errors)>0)
+
 @foreach($errors->all() as $error)
-<div class="alert alert-danger text-center">
 
-{{$error}}
+    <div class="alert alert-danger text-center col-md-5 mx-auto">
+
+    {{$error}}
 
 
-</div>
-@endforeach
+    </div>
+  @endforeach
+
 @endif
-@if(session("siker"))
+
+@if(session()->has('message'))
 
 
-<div class="alert alert-success text-justify">
-  {{session('siker')}}
-</div>
+  <div class="alert alert-success col-md-4 mx-auto text-center">
+  {{ session()->get('message') }}
+  </div>
+
 @endif
