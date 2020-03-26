@@ -4,14 +4,6 @@ Tintapatronok
 @endsection
 @section("content")
 
-@if(session("siker"))
-
-
-  <div class="alert alert-success col-md-4 mx-auto text-center">
-    {{session('siker')}}
-  </div>
-
-@endif
 
 @foreach($termekek as $termek)
 
@@ -30,7 +22,7 @@ Tintapatronok
 <div class="col col-md">
   {{ Form::open(['route' => ['kosarhozad',""],  'method' => 'POST']) }}
   {{csrf_field()}}
-  <input class="form-control db float-right" type="text" id="db" name="db" placeholder="db" min="0" max="{{$termek->db}}" required>
+  <input class="form-control db float-right" type="number" id="db" name="db" placeholder="db" min="0" max="{{$termek->db}}" required>
   <input hidden type="text" id="id" name="id" placeholder="id" value="{{$termek->id}}">
   <button class="btn btn-info mb-1 mr-1 float-right" type="submit" name="button"> <i class="fa fa-shopping-cart"></i></button>
 

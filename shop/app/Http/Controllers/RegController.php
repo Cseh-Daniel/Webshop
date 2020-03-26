@@ -37,7 +37,8 @@ class RegController extends Controller
         "hsz"=>"required",
         "easz"=>"nullable",
         "varos"=>"required",
-        "irszam"=>"required"
+        "irszam"=>"required",
+        "role_id"
 
       ])){
 //állapotmegtartás
@@ -45,7 +46,7 @@ $data=request()->all();
 return view("user.signup")->with("data",$data);
       }
 
-      $user= User::create(request(["name","email","password"]));
+      $user= User::create(request(["name","email","password","role_id"]));
       $adress= new Adresses;
       $adress->id=$user["id"];
       //$adress=request(["utca","hsz","easz","varos","irszam"]);

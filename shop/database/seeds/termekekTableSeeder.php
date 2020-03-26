@@ -12,12 +12,12 @@ class termekekTableSeeder extends Seeder
     public function run()
     {
 
-      $termek= new \App\termekek([
+      /*$termek= new \App\termekek([
 "csop"=>"p",
 "nev"=>"valami patron",
 "db"=>"20",
 "ar"=>"1234"
       ]);
-      $termek->save();
+      $termek->save();*/
     }
 }

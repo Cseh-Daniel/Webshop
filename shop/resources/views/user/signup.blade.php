@@ -28,6 +28,8 @@
       <label class="mb-0 mt-3" for="easz">Emelet és ajtószám:</label>
       <input class="form-control" type="text" name="easz" value="" placeholder="pl: 1/12">
 
+      <input class="form-control" type="number" name="role_id" value="2" hidden>
+
       <button class="btn btn-primary mt-3" type="submit" name="send">Regisztrálás</button>
       {{csrf_field()}}
     </form>

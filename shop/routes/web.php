@@ -33,7 +33,7 @@ Route::middleware("auth")->group(function(){
   Route::post("/feltolt/submit","termekController@submit");
 });
 
-Route::middleware("auth")->prefix("admin")->group(function(){
+Route::middleware("isAdmin")->prefix("admin")->group(function(){
   Route::get("/feltoltes","PagesController@getFeltolt");
-  Route::get("/login","PagesController@getAlogin");
+  //Route::get("/login","PagesController@getAlogin");
 });

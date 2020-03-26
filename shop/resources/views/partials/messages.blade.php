@@ -12,11 +12,19 @@
 
 @endif
 
-@if(session()->has('message'))
+@if(session("siker"))
+
+
+  <div class="alert alert-success col-md-4 mx-auto text-center">
+    {{session('siker')}}
+  </div>
+
+@endif
+  <!--@if(session()->has('message'))
 
 
   <div class="alert alert-success col-md-4 mx-auto text-center">
   {{ session()->get('message') }}
-  </div>
+</div>
 
-@endif
+@endif-->

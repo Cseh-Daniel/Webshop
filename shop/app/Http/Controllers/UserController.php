@@ -40,7 +40,7 @@ class UserController extends Controller
     if(Auth::attempt(["email"=> $request->input("email"), "password" => $request->input("password")])){
 
         //return redirect()->back();
-        return redirect()->back()->with('message',"Sikeres bejelentkezés!");
+        return redirect()->back()->with('siker',"Sikeres bejelentkezés!");
     }else if(auth()->attempt(request(["email","password"]))==false){
       return back()->withErrors(["message"=>"A jelszó vagy e-mail nem eggyezik, próbálja újra."]);
     }
