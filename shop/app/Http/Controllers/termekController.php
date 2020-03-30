@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\termekek;
+use App\Gaddress;
+use App\rendeles;
+
 //use App\kosar;
 use Session;
 use Auth;
@@ -87,7 +90,7 @@ if (\Cart::session($uid)->isEmpty()) {
  $ossze=\Cart::session($uid)->getSubTotal();
  $osszdb=\Cart::session($uid)->getTotalQuantity();
  //dd($kosar,$ossze,$osszeg,$osszdb);
-return view("shop.kosar",["kosar" => $kosar,"osszdb"=>$osszdb]);
+return view("shop.kosar",["kosar" => $kosar,"osszdb"=>$osszdb,"osszeg"=>$osszeg]);
 }
 
 
@@ -123,8 +126,61 @@ $osszeg=\Cart::session($uid)->getTotal();
 $ossze=\Cart::session($uid)->getSubTotal();
 $osszdb=\Cart::session($uid)->getTotalQuantity();
 
-return view("shop.kosar",["kosar" => $kosar,"osszdb"=>$osszdb]);
+return view("shop.kosar",["kosar" => $kosar,"osszdb"=>$osszdb,"osszeg"=>$osszeg]);
 //return redirect()->route("kosar",["kosar" => $kosar,"osszdb"=>$osszdb]);
 }
+
+
+  public function rendel(Request $request){
+$gaddress="";
+if(!Auth::check()){
+    if(!$this->validate(request(),[
+    "nev"=>"required",
+    "utca"=>"required",
+    "hsz"=>"required",
+    "easz"=>"nullable",
+    "varos"=>"required",
+    "irszam"=>"required",
+    "phone"=>"required"
+
+  ])){
+//állapotmegtartás
+$data=request()->all();
+return view("shop.rendel")->with("data",$data);
+  }
+
+ $gaddress=new Gaddress;
+$gaddress->nev=$request->input("nev");
+$gaddress->utca=$request->input("utca");
+$gaddress->hsz=$request->input("hsz");
+$gaddress->easz=$request->input("easz");
+$gaddress->varos=$request->input("varos");
+$gaddress->irszam=$request->input("irszam");
+$gaddress->phone=$request->input("phone");
+$gaddress->save();
+}
+
+    if(Auth::check()){
+      $uid = Auth::user()->id;
+    }else {
+      $uid=Session::getId();
+    }
+
+
+    $kosartartalom=\Cart::session($uid)->getContent();
+    $kosar=$kosartartalom->toArray();
+    $osszeg=\Cart::session($uid)->getTotal();
+    $osszdb=\Cart::session($uid)->getTotalQuantity();
+
+/*$termek=termekek::find($kosar[1]["id"]);
+    foreach ($kosar as $k) {
+      $termek=termekek::find($k["id"]);
+      $termek["db"]=$termek["db"]-$k["quantity"];
+      $termek->save();
+    }
+\Cart::session($uid)->clear();
+return redirect("/")->with('siker',"Sikeres rendelés!");*/
+  }
+
 
 }

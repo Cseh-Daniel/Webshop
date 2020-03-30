@@ -23,14 +23,16 @@ Tintapatronok
   <h4 class="mt-2">{{$k["name"]}}</h4>
   </div>
   <div class="col col-sm-2 px-1 mt-2" name="ar"><h6>{{$k["price"]}} Ft</h6><span>{{$k["quantity"]}} DB</span></div>
-<button type="submit" name="-1" value="{{$k['id']}}" class="btn btn-primary px-2 mx-1">-1 DB</button>
-    <button type="submit" name="remove" value="{{$k['id']}}" class="btn btn-primary px-2 mx-1">Törlés</button>
+  <h5 class="my-auto mr-4">összesen: {{$k["price"]*$k["quantity"]}} Ft</h5>
+  <button type="submit" name="-1" value="{{$k['id']}}" class="btn btn-primary px-2 mx-1"    >-1 DB</button>
+  <button type="submit" name="remove" value="{{$k['id']}}" class="btn btn-primary px-2 mx-1">Törlés</button>
   </div>
   <hr class="thr">
 
 </div>
   {{Form::close()}}
   @endforeach
+  <h2 class="text-center">Végösszeg: {{$osszeg}}</h2>
   <div class="text-center">
 <a href="/rendel" class="text-center"><button type="button" class="btn btn-success"><h4>Rendelés</h4></button></a>
 </div>

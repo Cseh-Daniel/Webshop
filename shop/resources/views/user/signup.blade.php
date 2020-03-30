@@ -25,7 +25,7 @@
       <label class="mb-0 mt-3" for="hsz">Házszám:</label>
       <input class="form-control" type="text" name="hsz" value="">
 
-      <label class="mb-0 mt-3" for="easz">Emelet és ajtószám:</label>
+      <label class="mb-0 mt-3" for="easz">(opcionális) Emelet és ajtószám:</label>
       <input class="form-control" type="text" name="easz" value="" placeholder="pl: 1/12">
 
       <input class="form-control" type="number" name="role_id" value="2" hidden>

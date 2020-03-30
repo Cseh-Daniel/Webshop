@@ -19,7 +19,9 @@ Route::middleware("guest")->group(function(){
   Route::post('login',"UserController@store");
   });
 
-  Route::get("/rendel","termekController@Rendel");
+  Route::get("/rendel","PagesController@Rendel");
+  Route::post("rendel","termekController@Rendel")->name("prendel");
+
 
 
   Route::get('/',"PagesController@getIndex")->name("home");
