@@ -22,6 +22,7 @@ Route::middleware("guest")->group(function(){
   Route::get("/rendel","PagesController@Rendel");
   Route::post("rendel","termekController@Rendel")->name("prendel");
 
+  //Route::get('/hellomail',"PagesController@hellomail");
 
 
   Route::get('/',"PagesController@getIndex")->name("home");

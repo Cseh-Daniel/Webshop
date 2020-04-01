@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Adresses;
+use App\Mail\hello;
+use Illuminate\Support\Facades\Mail;
 
 class RegController extends Controller
 {
@@ -60,7 +62,7 @@ return view("user.signup")->with("data",$data);
       $adress->save();
       auth()->login($user);
 
-      //\Mail::to($user->email)->send(new hello($user));
+      Mail::to($request["email"])->send(new hello);
       return redirect("/")->with("ok","Sikeres regisztráció");
 
 
