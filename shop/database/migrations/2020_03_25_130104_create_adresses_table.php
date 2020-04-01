@@ -21,6 +21,7 @@ class CreateAdressesTable extends Migration
             $table->String("easz")->nullable();
             $table->String("varos");
             $table->String("irszam");
+            $table->String("phone");
         });
     }
 

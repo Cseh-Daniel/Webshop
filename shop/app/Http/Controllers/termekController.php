@@ -133,6 +133,9 @@ return view("shop.kosar",["kosar" => $kosar,"osszdb"=>$osszdb,"osszeg"=>$osszeg]
 
   public function rendel(Request $request){
 $gaddress="";
+$rendeles="";
+$termek="";
+$guest=0;
 if(!Auth::check()){
     if(!$this->validate(request(),[
     "nev"=>"required",
@@ -158,12 +161,20 @@ $gaddress->varos=$request->input("varos");
 $gaddress->irszam=$request->input("irszam");
 $gaddress->phone=$request->input("phone");
 $gaddress->save();
+
 }
 
     if(Auth::check()){
       $uid = Auth::user()->id;
+      $aid=$uid;
     }else {
       $uid=Session::getId();
+      $guest=1;
+      $y=date("Y");
+      $m=date("m");
+      $d=date("d");
+      $bid=gaddress::select("id")->where("nev","=",$request->input("nev"))->whereYear("created_at","=",$y)->whereMonth("created_at","=",$m)->whereDay("created_at","=",$d)->limit(1)->get();
+      $aid=$bid[0]["id"];
     }
 
 
@@ -171,15 +182,22 @@ $gaddress->save();
     $kosar=$kosartartalom->toArray();
     $osszeg=\Cart::session($uid)->getTotal();
     $osszdb=\Cart::session($uid)->getTotalQuantity();
-
-/*$termek=termekek::find($kosar[1]["id"]);
+    $oid=rand(1,1000000);
     foreach ($kosar as $k) {
+      $rendeles=new rendeles;
       $termek=termekek::find($k["id"]);
       $termek["db"]=$termek["db"]-$k["quantity"];
       $termek->save();
+      $rendeles->id=$oid;
+      $rendeles->address_id=$aid;
+      $rendeles->uid=$uid;
+      $rendeles->guest=$guest;
+      $rendeles->tnev=$k["name"];
+      $rendeles->tdb=$k["quantity"];
+      $rendeles->save();
     }
 \Cart::session($uid)->clear();
-return redirect("/")->with('siker',"Sikeres rendelés!");*/
+return redirect("/")->with('siker',"Sikeres rendelés!");
   }
 
 

@@ -38,6 +38,7 @@ class RegController extends Controller
         "easz"=>"nullable",
         "varos"=>"required",
         "irszam"=>"required",
+        "phone"=>"required",
         "role_id"
 
       ])){
@@ -55,6 +56,7 @@ return view("user.signup")->with("data",$data);
       $adress->easz=$request["easz"];
       $adress->varos=$request["varos"];
       $adress->irszam=$request["irszam"];
+      $adress->phone=$request["phone"];
       $adress->save();
       auth()->login($user);
 

@@ -14,6 +14,8 @@
       <input class="form-control" type="password" name="password" value="">
       <label class="mb-0 mt-3" for="password_confirmation">Jelszó újra:</label>
       <input class="form-control" type="password" name="password_confirmation" value="">
+      <label class="mb-0 mt-3" for="phone">Telefon:</label>
+      <input class="form-control" type="text" name="phone" value="">
       <label class="mb-0 mt-3" for="irszam">Irányítószám:</label>
       <input class="form-control" type="text" name="irszam" value="">
       <label class="mb-0 mt-3" for="varos">Város:</label>

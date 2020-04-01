@@ -17,6 +17,7 @@ class CreateRendelesTable extends Migration
             $table->String('id');
             $table->timestamps();
             $table->String("address_id");
+            $table->String("uid");
             $table->boolean("guest")->default(0);
             $table->String("tnev");
             $table->String("tdb");
