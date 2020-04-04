@@ -50,7 +50,7 @@
       <i class="fa fa-user" ></i> Saját fiók </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="login">Bejelentkezés</a>
-      <a class="dropdown-item" href="/signup">Regisztráció</a>
+      <a class="dropdown-item" href="register">Regisztráció</a>
     </div>
   </li>
   </ul>

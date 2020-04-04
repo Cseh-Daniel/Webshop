@@ -46,7 +46,7 @@ class RegController extends Controller
       ])){
 //állapotmegtartás
 $data=request()->all();
-return view("user.signup")->with("data",$data);
+return view("auth.register")->with("data",$data);
       }
 
       $user= User::create(request(["name","email","password","role_id"]));

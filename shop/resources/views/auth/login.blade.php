@@ -12,6 +12,9 @@
       <label class="mb-0 mt-3" for="password">Jelszó:</label>
       <input class="form-control" type="password" name="password" value="">
       <button class="btn btn-primary mt-3" type="submit" name="send">Bejelentkezés</button>
+      <a class="btn btn-link" href="{{ route('password.request') }}">
+          Elfelejtettem a jelszavam!
+      </a>
       {{csrf_field()}}
     </form>
   </div>

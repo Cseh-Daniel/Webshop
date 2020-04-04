@@ -13,7 +13,7 @@ class PagesController extends Controller
 {
   public function getIndex(){
 $termekek=termekek::all();
-    return view("home",["termekek" => $termekek]);
+    return view("shop.home",["termekek" => $termekek]);
   }
 
   /*public function hellomail(){
@@ -26,13 +26,13 @@ $termekek=termekek::all();
 
   public function getSignup(){
 
-    return view("user.signup");
+    return view("auth.register");
 
   }
 
   public function getSignin(){
 
-    return view("user.signin");
+    return view("auth.login");
 
   }
 

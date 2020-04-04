@@ -21,6 +21,8 @@ class CreateRendelesTable extends Migration
             $table->boolean("guest")->default(0);
             $table->String("tnev");
             $table->String("tdb");
+            $table->Integer("dbar");
+            $table->Integer("osszar");
 
         });
     }

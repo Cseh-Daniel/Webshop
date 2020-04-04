@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\termekek;
 use App\Gaddress;
 use App\rendeles;
-
-//use App\kosar;
 use Session;
 use Auth;
+
+//use App\kosar;
+
 
 class termekController extends Controller
 {

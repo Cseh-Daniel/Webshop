@@ -24,7 +24,9 @@ class ResetPasswordController extends Controller
     /**
      * Where to redirect users after resetting their password.
      *
-     * @var string
+     * var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+  protected $redirectTo = RouteServiceProvider::HOME;
+  //protected $redirectTo = redirect("/");
+  //return redirect("/");
 }

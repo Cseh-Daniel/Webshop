@@ -11,16 +11,16 @@
 |
 */
 
-
 Route::middleware("guest")->group(function(){
-  Route::get('/signup',"PagesController@getSignup");
+  Route::get('/register',"PagesController@getSignup")->name("register");
   Route::get('/login',"PagesController@getSignin")->name("login");
   Route::post('signup',"RegController@store");
   Route::post('login',"UserController@store");
-  });
+});
+
 
   Route::get("/rendel","PagesController@Rendel");
-  Route::post("rendel","termekController@Rendel")->name("prendel");
+  Route::post("rendel","OrderingController@Rendel")->name("prendel");
 
   //Route::get('/hellomail',"PagesController@hellomail");
 
@@ -30,6 +30,7 @@ Route::middleware("guest")->group(function(){
   Route::post("/kosarhozad","termekController@kosarhozad")->name("kosarhozad");
   Route::get("/kosar","termekController@kosarTartalom")->name("kosar");
   Route::post("/kosarupdate","termekController@kosarUpdate")->name("kosarupdate");
+
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");
@@ -37,6 +38,9 @@ Route::middleware("auth")->group(function(){
 });
 
 Route::middleware("isAdmin")->prefix("admin")->group(function(){
+
   Route::get("/feltoltes","PagesController@getFeltolt");
   //Route::get("/login","PagesController@getAlogin");
 });
+
+Auth::routes();
