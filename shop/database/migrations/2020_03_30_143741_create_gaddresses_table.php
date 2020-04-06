@@ -23,6 +23,7 @@ class CreateGaddressesTable extends Migration
           $table->String("varos");
           $table->String("irszam");
           $table->String("phone");
+          $table->String("email");
 
         });
     }

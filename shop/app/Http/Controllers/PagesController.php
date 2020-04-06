@@ -6,8 +6,8 @@ use App\termekek;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
-/*use App\Mail\hello;
-use Illuminate\Support\Facades\Mail;*/
+use App\Mail\OrderMail;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
@@ -16,11 +16,11 @@ $termekek=termekek::all();
     return view("shop.home",["termekek" => $termekek]);
   }
 
-  /*public function hellomail(){
+  /*public function mail(){
 
-    Mail::to("codaryf@gmail.com")->send(new hello);
+    //Mail::to("codaryf@gmail.com")->send(new hello);
 
-    return new hello();
+    return new OrderMail(1,2,3,4);
 
   }*/
 

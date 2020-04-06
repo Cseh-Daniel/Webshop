@@ -22,7 +22,7 @@ Route::middleware("guest")->group(function(){
   Route::get("/rendel","PagesController@Rendel");
   Route::post("rendel","OrderingController@Rendel")->name("prendel");
 
-  //Route::get('/hellomail',"PagesController@hellomail");
+  Route::get('/mail',"PagesController@mail");
 
 
   Route::get('/',"PagesController@getIndex")->name("home");

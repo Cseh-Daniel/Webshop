@@ -54,6 +54,11 @@ class UserController extends Controller
 
     }
 
+    public function updateProfile(Request $request){
+      $this->validate(request(),[])
+
+    }
+
     public function destroy(){
 
       auth()->logout();

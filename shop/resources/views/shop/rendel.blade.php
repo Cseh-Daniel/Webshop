@@ -12,6 +12,8 @@ Tintapatronok
   <h4 class="mt-3">Teljes összeg: <strong><u>{{$osszertek}}</u></strong> Ft</h4>
   </div>
 
+ <h3>Oldalunkon jelenleg csak utánvéttel, készpénzzel, a futárnál kiszállításkor lehet fizetni</h3>
+
 {{ Form::open(['route' => ['prendel',""],  'method' => 'POST']) }}
 {{csrf_field()}}
 
@@ -20,6 +22,9 @@ Tintapatronok
 @if(!auth()->check())
 <label for="nev">Név</label>
 <input class="form-control" type="text" name="nev" value="">
+
+<label for="email">E-mail:</label>
+<input class="form-control" type="text" name="email" value="">
 
 <label for="phone">Telefon:</label>
 <input class="form-control" type="text" name="phone" value="">
