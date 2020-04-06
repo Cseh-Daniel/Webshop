@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Session;
 
 use App\User;
+use App\Adresses;
 use Auth;
 
 class UserController extends Controller
@@ -49,15 +50,50 @@ class UserController extends Controller
     }
 
     public function showProfile(){
-
-      return view("user.profile");
-
-    }
-
-    public function updateProfile(Request $request){
-      $this->validate(request(),[])
+      $uid=Auth::user()->id;
+      $address=adresses::find($uid);
+      return view("user.profile")->with("address",$address);
 
     }
+
+    public function addressupdate(Request $request){
+      $uid=Auth::user()->id;
+      $this->validate(request(),[
+        "varos"=>"required",
+        "irszam"=>"required",
+        "utca"=>"required",
+        "hsz"=>"required",
+        "easz"=>""
+      ]);
+      $address=adresses::find($uid);
+      $address["varos"]=$request->input("varos");
+      $address["irszam"]=$request->input("irszam");
+      $address["utca"]=$request->input("utca");
+      $address["hsz"]=$request->input("hsz");
+      $address["easz"]=$request->input("easz");
+      $address->save();
+      return redirect()->back()->with("siker","Sikeres adat frissítés!");
+    }
+
+    /*public function pwupdate(Request $request){
+
+      $uid=Auth::user()->id;
+      $this->validate(request(),[
+        "password"=>"required",
+        "newpassword"=>"required|confirmed"
+      ]);
+      $user=User::find($uid);
+      if (Auth::attempt(["email"=>$user["email"],"password" => $request->input("password")])) {
+        $user["password"]=bcrypt($request->input("newpassword"));
+        $user->save();
+
+      }else if(Auth::attempt(["email"=>$user["email"],"password" => $request->input("password")])==false){
+        return back()->withErrors(["message"=>"A jelszó nem eggyezik, próbálja újra."]);
+      }
+
+      return redirect()->back()->with("siker","Sikeres jelszó csere!");
+    }*/
+
 
     public function destroy(){
 

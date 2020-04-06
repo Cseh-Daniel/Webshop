@@ -34,11 +34,14 @@ Route::middleware("guest")->group(function(){
 Route::middleware("auth")->group(function(){
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");
-  Route::post("/feltolt/submit","termekController@submit");
+  Route::post('/addressupdate',"UserController@addressupdate");
+  Route::post('/pwupdate',"UserController@pwupdate");
+
+
 });
 
 Route::middleware("isAdmin")->prefix("admin")->group(function(){
-
+Route::post("/feltolt/submit","termekController@submit");
   Route::get("/feltoltes","PagesController@getFeltolt");
   //Route::get("/login","PagesController@getAlogin");
 });
