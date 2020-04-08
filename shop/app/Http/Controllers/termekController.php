@@ -10,6 +10,8 @@ use App\rendeles;
 use Session;
 use Auth;
 
+use Illuminate\Support\Facades\DB;
+
 //use App\kosar;
 
 
@@ -154,7 +156,7 @@ $data=request()->all();
 return view("shop.rendel")->with("data",$data);
   }
 
- $gaddress=new Gaddress;
+$gaddress=new Gaddress;
 $gaddress->nev=$request->input("nev");
 $gaddress->utca=$request->input("utca");
 $gaddress->hsz=$request->input("hsz");
@@ -201,6 +203,23 @@ $gaddress->save();
 \Cart::session($uid)->clear();
 return redirect("/")->with('siker',"Sikeres rendelés!");
   }
+
+public function rendelesek(){
+
+  $uid=Auth::user()->id;
+  //$oid=rendeles::select("id")->where("uid","=",$uid)->get();
+  //$oid=rendeles::select(DB::raw("distinct(id), count(id) as db, created_at"))->where("uid","=",$uid)->groupBy("id")->get();
+  $oid=DB::select(DB::raw("select id,count(id) as db from rendeles where uid=".$uid." group by id"));
+  
+  $orders=rendeles::select("*")->where("uid","=",$uid)->get();
+
+return view("shop.rendelesek",["oid"=>$oid,"orders"=>$orders]);
+
+
+}
+
+
+
 
 
 }

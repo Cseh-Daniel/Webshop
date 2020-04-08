@@ -36,6 +36,7 @@ $termekek=termekek::all();
 
   }
 
+
   public function getFeltolt(){
     return view("admin.feltolt");
   }

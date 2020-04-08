@@ -31,7 +31,10 @@ Route::middleware("guest")->group(function(){
   Route::get("/kosar","termekController@kosarTartalom")->name("kosar");
   Route::post("/kosarupdate","termekController@kosarUpdate")->name("kosarupdate");
 
-Route::middleware("auth")->group(function(){
+
+
+  Route::middleware("auth")->group(function(){
+  Route::get("/orders","termekController@rendelesek");
   Route::get('/profil',"UserController@showProfile");
   Route::get('/logout',"UserController@destroy");
   Route::post('/addressupdate',"UserController@addressupdate");
@@ -40,8 +43,10 @@ Route::middleware("auth")->group(function(){
 
 });
 
-Route::middleware("isAdmin")->prefix("admin")->group(function(){
 Route::post("/feltolt/submit","termekController@submit");
+
+Route::middleware(["isAdmin","auth"])->prefix("admin")->group(function(){
+
   Route::get("/feltoltes","PagesController@getFeltolt");
   //Route::get("/login","PagesController@getAlogin");
 });
